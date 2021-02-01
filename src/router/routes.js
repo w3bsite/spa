@@ -23,7 +23,7 @@ const routes = [
         name: "Single Article",
         icon: "article",
         path: "articles/:id",
-        component: () => import("components/Singlearticle.vue")
+        component: () => import("components/singlearticle.vue")
       },
       {
         name: "Redirect",
