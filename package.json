@@ -8,6 +8,7 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build",
     "dev": "quasar dev",
     "android": "quasar dev -m cordova -T android"
   },
