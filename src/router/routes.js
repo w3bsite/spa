@@ -42,7 +42,7 @@ const routes = [
         name: "Add New!",
         icon: "mail",
         path: "add",
-        component: () => import("components/add.vue")
+        component: () => import("components/Add.vue")
       },
       {
         name: "About Us",
