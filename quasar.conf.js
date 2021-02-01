@@ -39,6 +39,9 @@ module.exports = function(/* ctx */) {
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      env: {
+        backendUrl: ctx.dev ? process.env.backendUrl : process.env.backendUrl
+      },
       vueRouterMode: "hash", // available values: 'hash', 'history'
 
       // transpile: false,
