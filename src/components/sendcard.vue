@@ -15,17 +15,24 @@
           outlined
           square
         />
-        <span class="col-md-8 col-xs-0 col-sm-1"></span>
+        <!-- <span class="col-md-8 col-xs-0 col-sm-1"></span> -->
+        <q-input
+          v-model="x.caption"
+          class="q-mx-md col-md-3 col-sm-8 col-xs-11"
+          label="Enter Your Image URL"
+          outlined
+          square
+        />
         <q-input
           v-model="x.content"
-          class="q-ma-md col-md-6 col-sm-10 col-xs-11"
+          class="q-ma-md col-md-8 col-sm-10 col-xs-11"
           label="Enter Your content"
           outlined
           square
           type="textarea"
         />
 
-        <span class="col-md-5 col-xs-0 col-sm-1"></span>
+        <span class="col-md-3 col-xs-0 col-sm-1"></span>
         <q-select
           v-model="url"
           :options="urlSel"
@@ -49,7 +56,10 @@
       <q-separator></q-separator>
       <q-card-section>
         <span class="text-body2"> {{ x.content }}</span>
-        {{ x.bool }}
+      </q-card-section>
+      <q-card-section>
+        <img :src="x.caption" class="col" alt="" /><br />
+        {{ x.caption }}
       </q-card-section>
     </q-card>
   </div>

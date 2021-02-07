@@ -19,10 +19,11 @@ const routes = [
         meta: { icon: "task" },
         component: () => import("components/Articles.vue")
       },
+
       {
         name: "Single Article",
         icon: "article",
-        path: "articles/:id",
+        path: ":id(\\d+)",
         component: () => import("components/singlearticle.vue")
       },
       {

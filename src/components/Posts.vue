@@ -1,38 +1,43 @@
 <template>
-  <div class="q-ma-md">
-    <q-card-section class="q-pa-md">
-      <q-chip size="16px">
-        <q-avatar color="red" icon="library_books" text-color="white" />
-        {{ this.url }}
-      </q-chip>
-    </q-card-section>
-    <q-card-section v-if="er">
-      <q-bar>{{ er }}</q-bar>
-    </q-card-section>
-    <div v-for="(post, i) in posts" :key="i">
-      <q-card
-        bordered
-        :class="[{ hidden: !post.bool }, 'row', 'q-mx-sm', 'q-my-md']"
-      >
-        <div :id="i" class="col">
-          <q-card-section class="row">
-            <div class="text-body1 col">
-              {{ post.title }}
-            </div>
-            <div class="">
-              <a href="#" @click="post.bool = false & del(post.id, i)">
-                <q-icon name="clear" size="20px"></q-icon>
-              </a>
-            </div>
-          </q-card-section>
-          <q-separator inset />
-          <q-card-section class="text-body2">
-            {{ post.content }}
-          </q-card-section>
-        </div>
-      </q-card>
+  <q-pull-to-refresh @refresh="refresh">
+    <div class="q-ma-md">
+      <q-card-section class="q-pa-md">
+        <q-chip size="16px">
+          <q-avatar color="red" icon="library_books" text-color="white" />
+          {{ this.url }}
+        </q-chip>
+      </q-card-section>
+      <q-card-section v-if="er">
+        <q-bar>{{ er }}</q-bar>
+      </q-card-section>
+      <div v-for="(post, i) in posts" :key="i">
+        <q-card
+          bordered
+          :class="[{ hidden: !post.bool }, 'row', 'q-mx-sm', 'q-my-md']"
+        >
+          <div :id="i" class="col">
+            <q-card-section class="row">
+              <div class="text-body1 col">
+                <qmarkdown>{{ post.title }}</qmarkdown>
+              </div>
+              <div class="">
+                <a href="#" @click="post.bool = false & del(post.id, i)">
+                  <q-icon name="clear" size="20px"></q-icon>
+                </a>
+              </div>
+            </q-card-section>
+            <q-separator inset />
+            <q-card-section class="text-body2">
+              <qmarkdown>{{ post.content }}</qmarkdown>
+            </q-card-section>
+            <q-card-section>
+              <img :src="post.caption" class="col" alt="" /><br />
+            </q-card-section>
+          </div>
+        </q-card>
+      </div>
     </div>
-  </div>
+  </q-pull-to-refresh>
 </template>
 
 <script>
@@ -63,6 +68,12 @@ export default {
     // },
   },
   methods: {
+    refresh(done) {
+      setTimeout(() => {
+        this.gt();
+        done();
+      }, 1000);
+    },
     met: function (i) {
       var element = this.$refs[i];
       var top = element.offsetTop;

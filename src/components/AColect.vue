@@ -42,7 +42,7 @@
             <q-separator inset />
             <q-card-section class="col">
               <q-markdown>{{
-                article.content.substring(0, 8000) + "...."
+                article.content.substring(0, 590) + "...."
               }}</q-markdown>
             </q-card-section>
             <q-card-actions class="row">
@@ -51,7 +51,7 @@
                 color="primary"
                 text-color="white"
                 label="Continue"
-                :to="`${article.id}`"
+                :to="`/articles/` + article.id"
               />
             </q-card-actions>
           </div>
