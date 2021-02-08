@@ -1,6 +1,6 @@
 <template>
   <div>
-    <getcard :coo="this.coo" :url="this.url"></getcard>
+    <getcard :url="this.url"></getcard>
   </div>
 </template>
 
@@ -13,9 +13,6 @@ export default {
       coo: [],
       url: "/articles",
     };
-  },
-  created() {
-    this.coo = this.$q.cookies.getAll();
   },
 };
 </script>

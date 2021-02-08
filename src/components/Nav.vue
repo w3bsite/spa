@@ -7,7 +7,14 @@
             <div class="column full-height">
               <q-header :reveal-offset="50" reveal elevated>
                 <q-toolbar class="bg-pink shadow-4">
-                  <q-btn flat round dense icon="menu" class="q-mr-sm" />
+                  <q-btn
+                    :to="{ name: `Home Page` }"
+                    flat
+                    round
+                    dense
+                    icon="menu"
+                    class="q-mr-sm"
+                  />
                   <q-avatar>
                     <img
                       src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg"
@@ -41,7 +48,7 @@
                     <q-route-tab
                       v-for="(x, i) in route.children"
                       :key="i"
-                      :to="x.path"
+                      :to="{ name: x.name }"
                       :icon="x.icon"
                       :label="x.name"
                       :ripple="{ color: 'pink' }"
@@ -57,7 +64,6 @@
   </nav>
 </template>
 <script>
-import axios from "axios";
 export default {
   name: "Nav",
   data() {
@@ -76,12 +82,12 @@ export default {
               icon: "home",
               path: "home",
             },
+
             {
-              name: "My Articles",
+              name: "All Articles",
               icon: "article",
               path: "articles",
-
-              meta: { icon: "article", type: "/articles" },
+              meta: { icon: "task", icon: "article", type: "/articles" },
             },
             {
               name: "My Posts",
@@ -96,7 +102,7 @@ export default {
               meta: { icon: "analytics" },
             },
             {
-              name: "Add More!",
+              name: "Add New!",
               icon: "mail",
               path: "add",
             },
@@ -111,10 +117,9 @@ export default {
               path: "test",
             },
             {
-              name: "login",
-              icon: "login",
+              name: "google",
+              icon: "google",
               path: "Login",
-              component: () => import("components/google.vue"),
             },
           ],
         },

@@ -8,19 +8,6 @@
         text-color="white"
         label="Login with google"
       ></q-btn>
-      <q-btn
-        type="a"
-        color="white"
-        text-color="black"
-        label="Logout"
-        @click="x = x + 1"
-      ></q-btn>
-
-      <button @click="message = Date()">Try Me</button>{{ message }}
-      <br />
-      {{ tm }}
-      <br />
-      {{ ms }}
     </q-card-section>
   </q-card>
 </template>
@@ -32,9 +19,6 @@ export default {
     return {
       ur: "connect/google",
       env: "",
-      message: "",
-
-      tm: 1,
     };
   },
   created() {
@@ -42,21 +26,9 @@ export default {
   },
   mounted() {
     this.env = process.env.backendUrl + "/" + this.ur;
-    this.dd();
   },
-  methods: {
-    dd: function () {
-      return (this.ms = date());
-    },
-    gtg: function () {
-      this.$axios.get(this.ur);
-    },
-  },
-  computed: {
-    ms: function () {
-      return this.tm + Date();
-    },
-  },
+  methods: {},
+
   watch: {},
 };
 </script>

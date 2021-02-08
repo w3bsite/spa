@@ -46,7 +46,7 @@
               color="primary"
               text-color="white"
               label="Continue"
-              :to="`/articles/` + article.id"
+              :to="url + `/` + article.id"
             />
           </q-card-actions>
         </div>
@@ -59,7 +59,7 @@
 export default {
   props: {
     url: { type: String, default: "/articles" },
-    coo: [Object, Array],
+
     char: { Number, default: 160 },
   },
   data() {
@@ -71,7 +71,7 @@ export default {
       er: null,
       login: false,
       hid: false,
-
+      coo: [],
       options: ["id", "title", "updated_at"],
       order: "id",
     };
@@ -121,7 +121,7 @@ export default {
     },
     gt: function (order) {
       this.$axios
-        .get(this.url + `/?_sort=${order}:ASC`, {
+        .get(this.url + `/?_sort=${order}:ASC&_limit=-1`, {
           headers: {
             Authorization: "Bearer" + " " + this.coo.jwt,
           },

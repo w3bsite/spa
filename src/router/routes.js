@@ -23,8 +23,16 @@ const routes = [
       {
         name: "Single Article",
         icon: "article",
-        path: ":id(\\d+)",
+        meta: { category: "article" },
+        path: "articles/:id(\\d+)",
         component: () => import("components/singlearticle.vue")
+      },
+      {
+        name: "Single Post",
+        icon: "list",
+        meta: { category: "posts" },
+        path: "posts/:id(\\d+)",
+        component: () => import("components/singlepost.vue")
       },
       {
         name: "Redirect",
