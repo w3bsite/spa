@@ -66,10 +66,11 @@
 </template>
 <script>
 export default {
-  props: ["coo", "urlSel", "x"],
+  props: ["coo", "urlSel"],
   data() {
     return {
       url: "/articles",
+      x: {},
     };
   },
   mounted() {

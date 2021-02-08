@@ -1,18 +1,18 @@
   
 <template>
   <div>
-    <sendcard :coo="this.coo" :urlSel="this.urlSel" :x="this.x"></sendcard>
+    <sendcard :coo="this.coo" :urlSel="this.urlSel"></sendcard>
   </div>
 </template>
 
  <script>
-import sendcard from "./sendcard.vue";
+import sendcard from "./sendcard";
 export default {
+  name: "addnew",
   components: { sendcard },
+
   data() {
     return {
-      x: {},
-
       coo: [],
       urlSel: ["/articles", "/posts"],
     };
