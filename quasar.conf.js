@@ -78,11 +78,11 @@ module.exports = function(/* ctx */) {
       open: true, // opens browser window automatically,
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
-        "/api": {
+        "/apy": {
           target: "https://fitech.herokuapp.com/",
           changeOrigin: true,
           pathRewrite: {
-            "^/api": ""
+            "^/apy": ""
           }
         }
       }

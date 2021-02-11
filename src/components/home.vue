@@ -1,8 +1,8 @@
 <template>
   <div>
     <div v-for="(game, i) in games" :key="i" class="row">
-      <q-bar class="bg-indigo" v-if="e">{{ e }}</q-bar>
       <q-card class="col q-ma-md">
+        <q-bar class="bg-indigo" v-if="e">{{ e }}</q-bar>
         <q-card-section
           v-html="game.content.rendered"
           class="text-body2 text-right"
@@ -17,7 +17,7 @@
 export default {
   data() {
     return {
-      url: "https://www.dlfox.com/wp-json/wp/v2/posts",
+      url: "api/posts",
       games: [],
       e: "",
     };
