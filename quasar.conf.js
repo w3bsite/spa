@@ -51,7 +51,7 @@ module.exports = function(/* ctx */) {
       // Applies only if "transpile" is set to true.
       // transpileDependencies: [],
 
-      // rtl: false, // https://quasar.dev/options/rtl-support
+      rtl: true, // https://quasar.dev/options/rtl-support
       // preloadChunks: true,
       // showProgress: false,
       // gzip: true,
@@ -72,27 +72,12 @@ module.exports = function(/* ctx */) {
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
-    devServer: {
-      https: false,
-      port: 8080,
-      open: true, // opens browser window automatically,
-      proxy: {
-        // proxy all requests starting with /api to jsonplaceholder
-        "/apy": {
-          target: "https://fitech.herokuapp.com/",
-          changeOrigin: true,
-          pathRewrite: {
-            "^/apy": ""
-          }
-        }
-      }
-    },
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: "material-icons", // Quasar icon set
       // iconSet: "svg-mdi-v5",
-      lang: "en-us", // Quasar language pack
+      lang: "fa-ir", // Quasar language pack
       config: {},
 
       // Possible values for "importStrategy":
