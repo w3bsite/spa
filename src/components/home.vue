@@ -2,7 +2,7 @@
   <div>
     <div v-for="(game, i) in games" :key="i" class="row">
       <q-card class="col q-ma-md">
-        <q-bar class="bg-indigo" v-if="e">{{ e }}</q-bar>
+        <q-bar class="bg-indigo" v-if="er">{{ e }}</q-bar>
         <q-card-section
           v-html="game.content.rendered"
           class="text-body2 text-right"
@@ -17,9 +17,9 @@
 export default {
   data() {
     return {
-      url: "api/posts",
+      ur: "/posts",
       games: [],
-      e: "",
+      er: "",
     };
   },
   created() {
@@ -27,8 +27,8 @@ export default {
   },
   methods: {
     gt: function () {
-      this.$axios
-        .get(this.url)
+      this.$axiosSec
+        .get(this.ur)
         .then((r) => {
           this.games = r.data;
         })
