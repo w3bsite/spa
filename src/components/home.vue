@@ -1,10 +1,47 @@
 <template>
-  <div class="text-h3">Home Component</div>
+  <div>
+    <div v-for="(game, i) in games" :key="i" class="row">
+      <q-bar class="bg-indigo" v-if="e">{{ e }}</q-bar>
+      <q-card class="col q-ma-md">
+        <q-card-section
+          v-html="game.content.rendered"
+          class="text-body2 text-right"
+        >
+        </q-card-section>
+      </q-card>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      url: "https://www.dlfox.com/wp-json/wp/v2/posts",
+      games: [],
+      e: "",
+    };
+  },
+  created() {
+    this.gt();
+  },
+  methods: {
+    gt: function () {
+      this.$axios
+        .get(this.url)
+        .then((r) => {
+          this.games = r.data;
+        })
+        .catch((e) => {
+          this.er = e;
+        });
+    },
+  },
+};
 </script>
 
-<style>
+<style lang='sass'>
+p
+  img
+    max-width: 350px
 </style>

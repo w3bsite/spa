@@ -1,6 +1,6 @@
 <template>
   <Nav>
-    <keep-alive include="sendcard">
+    <keep-alive include="addnew">
       <router-view> </router-view>
     </keep-alive>
   </Nav>
@@ -15,6 +15,7 @@ export default {
   data() {
     return {};
   },
+
   mounted() {},
 };
 </script>

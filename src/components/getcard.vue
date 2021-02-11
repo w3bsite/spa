@@ -28,7 +28,7 @@
         <div :id="i" class="col">
           <q-card-section class="row">
             <div class="text-body1 col">
-              {{ article.title }}
+              <q-markdown>{{ article.title }}</q-markdown>
             </div>
             <div>
               <a href="#" @click="article.bool = false & del(article.id, i)">
@@ -38,7 +38,9 @@
           </q-card-section>
           <q-separator inset />
           <q-card-section class="text-body2">
-            {{ article.content.substring(0, 290) + "...." }}
+            <q-markdown>{{
+              article.content.substring(0, 290) + "...."
+            }}</q-markdown>
           </q-card-section>
           <q-card-actions class="row">
             <q-btn
