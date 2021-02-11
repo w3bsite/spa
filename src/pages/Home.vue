@@ -1,6 +1,8 @@
 <template>
   <Nav>
-    <router-view> </router-view>
+    <keep-alive include="sendcard">
+      <router-view> </router-view>
+    </keep-alive>
   </Nav>
 </template>
 
