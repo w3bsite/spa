@@ -7,13 +7,13 @@ import axios from "axios";
 // Note that if we wouldn't set any config here we do not need
 // a named export, as we could just `import axios from 'axios'`
 const axiosFir = axios.create({
-  baseURL: "https://fitech.herokuapp.com/"
+  baseURL: "https://sabz.herokuapp.com/https://fitech.herokuapp.com/"
 });
 
 // for use inside Vue files through this.$axios
 Vue.prototype.$axios = axiosFir;
 const axiosSec = axios.create({
-  baseURL: "https://www.dlfox.com/wp-json/wp/v2/"
+  baseURL: "https://sabz.herokuapp.com/https://www.dlfox.com/wp-json/wp/v2/"
 });
 Vue.prototype.$axiosSec = axiosSec;
 // Here we define a named export

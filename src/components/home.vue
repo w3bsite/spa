@@ -15,8 +15,11 @@
     </div>
     <div v-for="(game, i) in games" :key="i" class="row">
       <q-card class="col q-ma-md">
-        <q-bar class="bg-indigo" v-if="er">{{ e }}</q-bar>
-        <q-card-section v-html="game.content.rendered" class=" ">
+        <q-bar class="bg-indigo" v-if="er">{{ er }}</q-bar>
+        <q-card-section
+          v-html="game.content.rendered"
+          class="text-right dir-right"
+        >
         </q-card-section>
       </q-card>
     </div>
