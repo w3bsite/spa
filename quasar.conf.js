@@ -51,7 +51,7 @@ module.exports = function(/* ctx */) {
       // Applies only if "transpile" is set to true.
       // transpileDependencies: [],
 
-      // rtl: false, // https://quasar.dev/options/rtl-support
+      rtl: true, // https://quasar.dev/options/rtl-support
       // preloadChunks: true,
       // showProgress: false,
       // gzip: true,
@@ -92,7 +92,7 @@ module.exports = function(/* ctx */) {
     framework: {
       iconSet: "material-icons", // Quasar icon set
       // iconSet: "svg-mdi-v5",
-      lang: "en-us", // Quasar language pack
+      lang: "fa-ir", // Quasar language pack
       config: {},
 
       // Possible values for "importStrategy":
