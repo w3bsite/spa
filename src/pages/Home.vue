@@ -1,6 +1,6 @@
 <template>
   <Nav>
-    <keep-alive include="addnew">
+    <keep-alive include="addnew,home">
       <router-view> </router-view>
     </keep-alive>
   </Nav>
