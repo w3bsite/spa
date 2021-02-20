@@ -73,6 +73,7 @@ export default {
       login: false,
       hid: false,
       url: "/articles",
+      site: "https://sabz.herokuapp.com/https://fitech.herokuapp.com/",
       options: ["id", "title", "updated_at"],
       order: "id",
     };

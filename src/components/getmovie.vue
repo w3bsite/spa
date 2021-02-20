@@ -21,10 +21,16 @@
           <q-card class="col q-ma-md car">
             <q-bar class="bg-indigo" v-if="er">{{ er }}</q-bar>
             <q-card-section
-              :class="op ? visible : null"
               class="text-right dir-right"
               v-html="game.content.rendered"
             >
+            </q-card-section>
+            <q-card-section class="text-right dir-right">
+              <img
+                src="http://mydiba.me/tt10308674/ci6ckpgyfwll9yy49rcb6k10hsi-jpg/"
+                alt=""
+                style="width: 200px"
+              />
             </q-card-section>
           </q-card>
         </div>
@@ -47,10 +53,11 @@
 
 <script>
 export default {
+  props: { url: String },
   data() {
     return {
-      ur: "posts",
       current: 1,
+      ur: "posts",
       games: [],
       er: "",
       visible: false,
@@ -67,7 +74,7 @@ export default {
       alert(a);
     },
     gt: function (page = 1) {
-      this.$axiosfox
+      this.$axiosmovie
         .get(this.ur + `?per_page=8&page=` + page)
         .then((r) => {
           console.log("loading");

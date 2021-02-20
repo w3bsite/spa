@@ -1,6 +1,6 @@
 <template>
   <div>
-    <getcard :url="this.url"></getcard>
+    <getcard :site="this.site" :url="this.url"></getcard>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
     return {
       coo: [],
       url: "/articles",
+      site: "https://sabz.herokuapp.com/https://fitech.herokuapp.com/",
     };
   },
 };

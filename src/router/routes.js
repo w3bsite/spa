@@ -13,6 +13,12 @@ const routes = [
         component: () => import("components/home.vue")
       },
       {
+        name: "Movies",
+        icon: "film",
+        path: "movies",
+        component: () => import("components/movie.vue")
+      },
+      {
         name: "All Articles",
         icon: "article",
         path: "articles",

@@ -63,11 +63,12 @@ export default {
     url: { type: String, default: "/articles" },
 
     char: { Number, default: 160 },
+    site: String,
   },
   data() {
     return {
       dat: null,
-
+      ur: null,
       articles: [],
       s: null,
       er: null,
@@ -80,6 +81,7 @@ export default {
   },
   created() {
     this.coo = this.$q.cookies.getAll();
+    this.ur = this.site + this.url;
     this.gt(this.order);
   },
   mounted() {
@@ -103,8 +105,8 @@ export default {
       alert(i);
     },
     del: function (id, i) {
-      this.$axios
-        .delete(this.url + "/" + id, {
+      this.$axiosurl
+        .delete(this.ur + "/" + id, {
           headers: {
             Authorization: "Bearer" + " " + this.coo.jwt,
           },
@@ -122,8 +124,8 @@ export default {
         .catch((error) => ((this.login = true), (this.er = error)));
     },
     gt: function (order) {
-      this.$axios
-        .get(this.url + `/?_sort=${order}:ASC&_limit=-1`, {
+      this.$axiosurl
+        .get(this.ur + `/?_sort=${order}:ASC&_limit=-1`, {
           headers: {
             Authorization: "Bearer" + " " + this.coo.jwt,
           },

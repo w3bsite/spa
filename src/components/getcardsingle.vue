@@ -26,7 +26,7 @@
 <script>
 export default {
   name: "singleArticle",
-  props: { ur: { type: String, default: "article" } },
+  props: { ur: { type: String, default: "article" }, site: String },
 
   data() {
     return {
@@ -37,7 +37,7 @@ export default {
     };
   },
   created() {
-    this.url = this.ur + "/" + this.$route.params.id;
+    this.url = this.site + this.ur + "/" + this.$route.params.id;
     this.coo = this.$q.cookies.getAll();
     this.gt();
   },
@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     gt: function () {
-      this.$axios
+      this.$axiosurl
         .get(this.url, {
           headers: {
             Authorization: "Bearer" + " " + this.coo.jwt,
