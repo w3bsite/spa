@@ -39,7 +39,7 @@
           <q-separator inset />
           <q-card-section class="text-body2">
             <q-markdown>{{
-              article.content.substring(0, 290) + "...."
+              article.content.substring(0, 1200) + "...."
             }}</q-markdown>
           </q-card-section>
           <q-card-actions class="row">
@@ -62,7 +62,7 @@ export default {
   props: {
     url: { type: String, default: "/articles" },
 
-    char: { Number, default: 900 },
+    char: { Number, default: 160 },
     site: String,
   },
   data() {
