@@ -118,7 +118,7 @@ export default {
             },
             {
               name: "google",
-              icon: "google",
+              icon: "login",
               path: "Login",
             },
           ],
