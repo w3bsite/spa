@@ -62,7 +62,7 @@ export default {
   props: {
     url: { type: String, default: "/articles" },
 
-    char: { Number, default: 160 },
+    char: { Number, default: 900 },
     site: String,
   },
   data() {
