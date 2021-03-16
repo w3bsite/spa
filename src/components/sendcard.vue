@@ -81,7 +81,7 @@ export default {
       this.$axios
         .post(this.url, this.x, {
           headers: {
-            Authorization: "Bearer" + " " + this.coo.jwt,
+           
           },
         })
         .then((r) => {
