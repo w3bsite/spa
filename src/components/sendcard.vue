@@ -79,7 +79,7 @@ export default {
   methods: {
     sub: function () {
       this.$axiosurl
-        .post(this.url, this.x, {
+        .post("https://fitech.herokuapp.com"+this.url, this.x, {
           headers: {
            
           },
