@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     sub: function () {
-      this.$axios
+      $axiosurl
         .post(this.url, this.x, {
           headers: {
            
