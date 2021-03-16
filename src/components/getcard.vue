@@ -108,7 +108,7 @@ export default {
       this.$axiosurl
         .delete(this.ur + "/" + id, {
           headers: {
-            Authorization: "Bearer" + " " + this.coo.jwt,
+      
           },
         })
         .then(() => {
@@ -127,7 +127,7 @@ export default {
       this.$axiosurl
         .get(this.ur + `/?_sort=${order}:ASC&_limit=-1`, {
           headers: {
-            Authorization: "Bearer" + " " + this.coo.jwt,
+           
           },
         })
         .then((r) => {
