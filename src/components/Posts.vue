@@ -12,7 +12,7 @@ export default {
     return {
       coo: [],
       url: "/posts",
-      site: "https://sabz.herokuapp.com/https://fitech.herokuapp.com/",
+      site: "https://sabz.herokuapp.com/https://fitech.herokuapp.com",
     };
   },
 };
